@@ -1,0 +1,152 @@
+USE bjri15;
+SET NAMES 'utf8';
+
+--
+-- Databas: `bjri15`
+--
+DROP TABLE IF EXISTS `rm_movie2genre`;
+DROP TABLE IF EXISTS `rm_genre`;
+DROP TABLE IF EXISTS `rm_movie`;
+
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `rm_genre`
+--
+
+CREATE TABLE IF NOT EXISTS `rm_genre` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` char(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Dumpning av Data i tabell `rm_genre`
+--
+
+INSERT INTO `rm_genre` (`id`, `name`) VALUES
+(1, 'comedy'),
+(2, 'romance'),
+(3, 'college'),
+(4, 'crime'),
+(5, 'drama'),
+(6, 'thriller'),
+(7, 'animation'),
+(8, 'adventure'),
+(9, 'family'),
+(10, 'svenskt'),
+(11, 'action'),
+(12, 'horror');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `rm_movie`
+--
+
+CREATE TABLE IF NOT EXISTS `rm_movie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `director` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `length` int(11) DEFAULT NULL,
+  `year` int(11) NOT NULL DEFAULT '1900',
+  `plot` text COLLATE utf8_unicode_ci,
+  `image` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `youtube` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `imdb` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `synopsys` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `price` int(11) NOT NULL DEFAULT '19',
+  `rating` int(11) DEFAULT '8',
+  `updated` datetime DEFAULT NULL,
+  `rented` datetime DEFAULT NULL,
+  `subtext` char(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `speech` char(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `quality` char(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `format` char(3) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=28 ;
+
+--
+-- Dumpning av Data i tabell `rm_movie`
+--
+
+INSERT INTO `rm_movie` (`id`, `title`, `director`, `length`, `year`, `plot`, `image`, `youtube`, `imdb`, `synopsys`, `price`, `rating`, `updated`, `rented`, `subtext`, `speech`, `quality`, `format`) VALUES
+(1, 'Pulp fiction', 'Quentin Tarantino', 154, 1994, NULL, 'pulp-fiction.jpg', 'Pulp fiction official trailer', 'tt0110912', 'Jules Winnfield and Vincent Vega are two hitmen who are out to retrieve a suitcase stolen from their employer, mob boss Marsellus Wallace. Wallace has also asked Vincent to take his wife Mia out a few days later when Wallace himself will be out of town. Butch Coolidge is an aging boxer who is paid by Wallace to lose his next fight. The lives of these seemingly unrelated people are woven together comprising of a series of funny, bizarre and uncalled-for incidents.', 19, 89, '2016-01-12 13:26:26', '2016-01-09 14:35:08', NULL, NULL, NULL, NULL),
+(2, 'American Pie', 'J.B. Rogers', 95, 1999, NULL, 'american-pie.jpg', 'American Pie official trailer', 'tt0163651', 'Jim, Oz, Finch and Kevin are four friends who make a pact that before they graduate they will all lose their virginity. The hard job now is how to reach that goal by prom night. Whilst Oz begins singing to grab attention and Kevin tries to persuade his girlfriend, Finch tries any easy route of spreading rumors and Jim fails miserably. Whether it is being caught on top of a pie or on the Internet, Jim always end up with his trusty sex advice from his father. Will they achieve their goal of getting laid by prom night? or will they learn something much different.', 19, 70, '2016-01-12 00:45:07', '2016-01-09 14:35:08', NULL, NULL, NULL, NULL),
+(3, 'Pokémon The Movie 2000', 'Michael Haigney and Kunihiko Yuyama', 84, 1999, NULL, 'pok-mon-the-movie-2000.jpg', 'Pokémon The Movie 2000 official trailer', 'tt0210234', 'An evil genius in a flying fortress is trying to kidnap the birds of the fire, ice, and lightning islands in hopes of luring the sea power, Lugia, and controlling the world. Ash and his friends, in the process of carrying out an island tradition that requires visiting those three islands, discover the plot and try to stop it. Even the comic villains, Team Rocket, turn good and help out in the end against the threat of world destruction. And Pokemon assemble from all around the world in case they can be of help (but they end up helping only the merchandising).', 19, 58, '2016-01-12 14:47:53', '2016-01-09 14:35:08', NULL, NULL, NULL, NULL),
+(4, 'Kopps', 'Josef Fares', 90, 2003, NULL, 'kopps.jpg', 'Kopps official trailer', 'tt0339230', 'Police officer Benny is obsessed with American police cliches and livens up his own boring everyday life with dreams of duels with bad guys. But poor Benny and his colleagues doesn''t have much to do in the small town of Högboträsk. Most of their days are spent drinking coffee, eating sausage waffles and chasing down stray cows. Peace and quiet is the dream of every politician, but for the Swedish authorities, the lack of crooks is reason to close the local police station. When the cops investigate a suspected act of vandalism, they realise that they themselves may be able to raise the crime statistics high enough to stay in business.', 19, 68, '2016-01-12 00:37:02', '2016-01-09 14:35:08', NULL, NULL, NULL, NULL),
+(17, 'The Sting', 'George Roy Hill', 129, 1974, NULL, 'the-sting.jpg', 'The Sting official trailer', 'tt0070735', 'Johnny Hooker, a small time grifter, unknowingly steals from Doyle Lonnegan, a big time crime boss, when he pulls a standard street con. Lonnegan demands satisfaction for the insult. After his partner, Luther, is killed, Hooker flees, and seeks the help of Henry Gondorff, one of Luther''s contacts, who is a master of the long con. Hooker wants to use Gondorff''s expertise to take Lonnegan for an enormous sum of money to even the score, since he admits he "doesn''t know enough about killing to kill him." They devise a complicated scheme and amass a talented group of other con artists who want their share of the reparations. The stakes are high in this game, and our heroes must not only deal with Lonnegan''s murderous tendencies, but also other side players who want a piece of the action. To win, Hooker and Gondorff will need all their skills...and a fair amount of confidence.', 19, 83, '2016-01-12 00:49:29', NULL, NULL, NULL, NULL, NULL),
+(21, 'From dusk till dawn', 'Robert Rodriguez', 108, 1996, NULL, 'from-dusk-till-dawn.jpg', 'From dusk till dawn official trailer', 'tt0116367', 'After a bank heist in Abilene with several casualties, the bank robber Seth Gecko and his psychopath and rapist brother Richard Gecko continue their crime spree in a convenience store in the middle of the desert while heading to Mexico with a hostage. They decide to stop for a while in a low-budget motel. Meanwhile the former minister Jacob Fuller is traveling on vacation with his son Scott and his daughter Kate in a RV. Jacob lost his faith after the death of his beloved wife in a car accident and quit his position of pastor of his community and stops for the night in the same motel Seth and Richard are lodged. When Seth sees the recreational vehicle, he abducts Jacob and his family to help his brother and him to cross the Mexico border, promising to release them on the next morning. They head to the truck drivers and bikers bar Titty Twister where Seth will meet with his partner Carlos in the dawn. When they are watching the dancer Santanico Pandemonium, Seth and Richard fight with t', 19, 73, '2016-01-12 00:34:01', NULL, NULL, NULL, NULL, NULL),
+(22, 'Djungelboken', 'Wolfgang Reitherman', 78, 1967, NULL, 'djungelboken.jpg', 'Djungelboken official trailer', 'tt0061852', 'Abandoned after an accident, baby Mowgli is taken and raised by a family of wolves. As the boy grows older, the wise panther Bagheera realizes he must be returned to his own kind in the nearby man-village. Baloo the bear however thinks differently taking the young Mowgli under his wing and teaching that living in the jungle is the best life there is. Bagheera realizes that Mowgli is in danger, particularly from Shere Khan the tiger who hates all people. When Baloo finally comes around, Mowgli runs off into the jungle where he survives a second encounter with Kaa the snake and finally, with Shere Khan. It''s the sight of a pretty girl however that gets Mowgli to go the nearby man-village.', 19, 76, '2016-01-12 00:27:48', NULL, NULL, NULL, NULL, NULL),
+(23, 'Lost in translation', 'Sofia Coppola', 101, 2003, NULL, 'lost-in-translation.jpg', 'Lost in translation official trailer', 'tt0335266', 'Bob Harris is an American film actor, far past his prime. He visits Tokyo to appear in commercials, and he meets Charlotte, the young wife of a visiting photographer. Bored and weary, Bob and Charlotte make ideal if improbable traveling companions. Charlotte is looking for "her place in life," and Bob is tolerating a mediocre stateside marriage. Both separately and together, they live the experience of the American in Tokyo. Bob and Charlotte suffer both confusion and hilarity due to the cultural and language differences between themselves and the Japanese. As the relationship between Bob and Charlotte deepens, they come to the realization that their visits to Japan, and one another, must soon end. Or must they?', 19, 78, '2016-01-12 00:24:21', NULL, NULL, NULL, NULL, NULL),
+(24, 'Fanny och Alexander', 'Ingemar Bergman', 188, 1982, NULL, 'fanny-och-alexander.jpg', 'Fanny och Alexander official trailer', 'tt0083922', 'It''s the early twentieth century Sweden. Adolescent siblings Alexander and Fanny Ekdahl lead a relatively joyous and exuberant life with their well-off extended paternal family, led by the family matriarch, their grandmother, Helena Ekdahl. The openness of the family culture is exemplified by Helena''s now deceased husband ending up becoming best friends with one of her lovers, a Jewish puppet maker named Isak Jacobi, and their Uncle Gustav Adolf''s open liaison with one of the family maids, Maj, who everyone in the family adores, even Gustav Adolf''s wife, Alma. Between the siblings, Alexander in particular has inherited the family''s love of storytelling, his parents and his grandmother who are actors and who manage their own theater. Things change for Alexander and Fanny when their father, Oscar, dies shortly after Christmas 1907. Although she truly does believe she loves him, the children''s mother, Emilie, decides to marry Bishop Edvard Vergérus, who she first met as the officiate at O', 19, 81, '2016-01-12 00:20:52', NULL, NULL, NULL, NULL, NULL),
+(25, 'Emil i Lönneberga', 'Olle Hellbom', 95, 1971, NULL, 'emil-i-lonneberga.jpg', 'Emil i Lönneberga official trailer', 'tt0067047', 'Emil Svensson lives with his mother and father, little sister Ida, farmhand Alfred, and maid Lina on a picturesque farm in Småland. He is an unusually lively little boy, who just can''t resist trying out every whim that enters into his white-haired head. Always with the best intentions in mind, because he is a good-hearted child, but often with catastrophic results, especially for his short-tempered fater. As a result, Emil spends a lot of quality time in the wood shed carving wood figurines and waiting for Anton''s temper to cool down. And the father''s patience is certainly tried, as Emil gets his head stuck in the family''s only soup bowl, hoists little Ida up the flag pole, and arranges a lavish christmas party for the poor.', 19, 73, '2016-01-12 14:42:15', NULL, NULL, NULL, NULL, NULL),
+(26, 'Harry Potter och De vises sten', 'Chris Columbus', 152, 2001, NULL, 'harry-potter-och-de-vises-sten.jpg', 'Harry Potter och De vises sten official trailer', 'tt0241527', 'Harry Potter and the Sorcerer''s Stone is the first film in the Harry Potter series based on the novels by J.K. Rowling. It is the tale of Harry Potter, an ordinary 11-year-old boy serving as a sort of slave for his aunt and uncle who learns that he is actually a wizard and has been invited to attend the Hogwarts School for Witchcraft and Wizardry. Harry is snatched away from his mundane existence by Hagrid, the grounds keeper for Hogwarts, and quickly thrown into a world completely foreign to both him and the viewer. Famous for an incident that happened at his birth, Harry makes friends easily at his new school. He soon finds, however, that the wizarding world is far more dangerous for him than he would have imagined, and he quickly learns that not all wizards are ones to be trusted.', 19, 75, '2016-01-12 14:43:08', NULL, NULL, NULL, NULL, NULL),
+(27, 'Stinsen brinner ... filmen alltså', 'Claes Ericsson', 104, 1991, NULL, 'stinsen-brinner-filmen-alltsa.jpg', 'Stinsen brinner ... filmen alltså official trailer', 'tt0102982', 'The stationmaster is trying to prevent his station from being closed. The train isn''t coming and he has to explain to the waiting trainpassengers why it''s late, while other people is trying to get the station for their use; for example the italians, who want to make a pizzeria out of it. ', 19, 68, '2016-01-12 00:04:41', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellstruktur `rm_movie2genre`
+--
+
+CREATE TABLE IF NOT EXISTS `rm_movie2genre` (
+  `idMovie` int(11) NOT NULL,
+  `idGenre` int(11) NOT NULL,
+  PRIMARY KEY (`idMovie`,`idGenre`),
+  KEY `idGenre` (`idGenre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `rm_movie2genre`
+--
+
+INSERT INTO `rm_movie2genre` (`idMovie`, `idGenre`) VALUES
+(1, 1),
+(2, 1),
+(4, 1),
+(17, 1),
+(27, 1),
+(2, 2),
+(2, 3),
+(1, 4),
+(17, 4),
+(21, 4),
+(17, 5),
+(23, 5),
+(24, 5),
+(25, 5),
+(3, 7),
+(22, 7),
+(3, 8),
+(22, 8),
+(26, 8),
+(3, 9),
+(4, 9),
+(22, 9),
+(25, 9),
+(26, 9),
+(4, 10),
+(25, 10),
+(27, 10),
+(1, 11),
+(3, 11),
+(4, 11),
+(21, 11),
+(21, 12);
+
+--
+-- Restriktioner för dumpade tabeller
+--
+
+--
+-- Restriktioner för tabell `rm_movie2genre`
+--
+ALTER TABLE `rm_movie2genre`
+  ADD CONSTRAINT `rm_movie2genre_ibfk_1` FOREIGN KEY (`idMovie`) REFERENCES `rm_movie` (`id`),
+  ADD CONSTRAINT `rm_movie2genre_ibfk_2` FOREIGN KEY (`idGenre`) REFERENCES `rm_genre` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

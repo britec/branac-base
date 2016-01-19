@@ -35,6 +35,9 @@ The following external modules are included and subject to its own license.
 History
 -----------------------------------
 
+v2.0.0
+
+* Completely populated branax example (RM Rental movies)  
 
 v1.0.0 (2015-11-08)
 

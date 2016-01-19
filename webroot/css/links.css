@@ -1,0 +1,139 @@
+/** --------------------------------------------------------------
+ * Icons
+ *
+ */
+ul.icons {
+  margin: 0;
+  margin-bottom: 1.375em;
+  padding: 0;
+  list-style: none;
+}
+
+ul.icons li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+
+/** --------------------------------------------------------------
+ * Navbar: Plain style, nothing special
+ *
+ */
+ul.nb-plain {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nb-plain li {
+  padding: 0 0 0 1em;
+  margin: 0;
+  display: inline;
+}
+
+ul.nb-plain li:first-child {
+  padding-left: 0;
+}
+
+ul.nb-plain li.selected a {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}    
+
+ul.nb-plain a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}  
+
+ul.nb-plain a:hover {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  text-decoration: none;
+}
+
+
+/**
+ * Based on http://dbwebb.se/coachen/en-navbar-med-drop-down-meny-i-ren-html-och-css
+ * Changed to only style li-items instead of a.
+ */
+.navbar {}
+ 
+.navbar ul {
+  list-style: none; 
+  margin: 0; 
+  padding: 0;
+}
+ 
+.navbar li {
+  display: inline-block;
+  position: relative;
+  margin: 0 0 0 1em;  
+}
+
+.navbar li:first-child {
+  margin-left: 0;  
+}
+ 
+.navbar a {
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;  
+  white-space: nowrap;
+}
+
+.navbar .blogItem a {
+  font-size: smaller;
+}
+
+.navbar li:hover {
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  text-decoration: none;
+} 
+ 
+.navbar li.selected-parent, 
+.navbar li.selected {
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+
+}
+
+.navbar ul ul {
+  background-color: #ccc; 
+  padding: 8px; 
+  position: absolute; 
+  left: -9999px; 
+  z-index: 2;
+}
+ 
+.navbar li li {
+  margin-left: 0;
+  width: 100%;  
+}
+
+.navbar li:hover ul {
+  left: 0;
+}
+ 
+.navbar li li:hover {
+  border: 0;
+  text-decoration: underline;
+}
+
+.navbar li li.selected {
+  border: 0;
+  background-color: #eee; 
+}
+
+.italic {
+  font-style: italic;
+}
+
+

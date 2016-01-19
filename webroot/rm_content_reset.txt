@@ -1,0 +1,41 @@
+USE bjri15;
+SET NAMES 'utf8';
+--
+-- Create table for rm_ontent
+--
+DROP TABLE IF EXISTS rm_content;
+CREATE TABLE IF NOT EXISTS `rm_content` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` char(80) DEFAULT NULL,
+  `url` char(80) DEFAULT NULL,
+  `type` char(80) DEFAULT NULL,
+  `title` varchar(80) DEFAULT NULL,
+  `data` text,
+  `filter` char(80) DEFAULT NULL,
+  `published` datetime DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `updated` datetime DEFAULT NULL,
+  `deleted` datetime DEFAULT NULL,
+  `owner` char(80) DEFAULT NULL,
+  `category` char(80) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`),
+  UNIQUE KEY `url` (`url`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+--
+-- Dumpning av Data i tabell `rm_content`
+--
+
+INSERT INTO `rm_content` (`id`, `slug`, `url`, `type`, `title`, `data`, `filter`, `published`, `created`, `updated`, `deleted`, `owner`, `category`) VALUES
+(6, 'valkommen-till-var-blogg', 'valkommen-till-var-blogg', 'post', 'Välkommen till vår blogg', 'Välkommen till RM Rental Movies och vår blog.\r\n\r\nPå denna bloggrulle publicerar vi information om filmer och nyinkomna titlar. Du hittar också information om tävlingar och andra spännande aktiviteter för våra kunder. Du finner också information om ev planerade driftstopp för underhåll.\r\n\r\nVi hoppas detta ska komma till glädje', 'markdown', '2016-01-12 12:21:12', '2016-01-12 12:21:12', '2016-01-12 12:36:23', NULL, 'admin', 'Info'),
+(7, 'emil-i-lonneberga', 'emil-i-lonneberga', 'post', 'Emil i Lönneberga', 'För alla unga kan vi nu under en begränsad tid åter erbjuda den svenska klassikern Emil i Lönneberga. Återupplev alla de galna upptågen i den småländska idyllen. Mycket nöje', 'markdown', '2016-01-12 12:50:13', '2016-01-12 12:50:13', '2016-01-12 12:54:11', NULL, 'admin', 'Nyheter'),
+(8, 'blasningen-the-sting', 'blasningen-the-sting', 'post', 'Blåsningen (The Sting)', 'Denna film ligger alltjämt i toppskiktet bland vår populäraste filmer. Läs om intrigen nedan och låt dig inspireras till ännu ett möte med denna fantastiska film.\r\n\r\nJohnny Hooker, a small time grifter, unknowingly steals from Doyle Lonnegan, a big time crime boss, when he pulls a standard street con. Lonnegan demands satisfaction for the insult. After his partner, Luther, is killed, Hooker flees, and seeks the help of Henry Gondorff, one of Luther''s contacts, who is a master of the long con. Hooker wants to use Gondorff''s expertise to take Lonnegan for an enormous sum of money to even the score, since he admits he "doesn''t know enough about killing to kill him." They devise a complicated scheme and amass a talented group of other con artists who want their share of the reparations. The stakes are high in this game, and our heroes must not only deal with Lonnegan''s murderous tendencies, but also other side players who want a piece of the action. To win, Hooker and Gondorff will need all their skills...and a fair amount of confidence. ', 'markdown', '2016-01-12 12:57:36', '2016-01-12 12:57:36', '2016-01-12 13:01:27', NULL, 'admin', 'Film'),
+(9, 'servern-nere-kommande-tidagar-mellan-9-00-och-10-00', 'servern-nere-kommande-tidagar-mellan-9-00-och-10-00', 'post', 'Siten nere kommande tisdagar mellan 9.00 och 10.00.', 'Det finns risk att våra servrar behöver stängas ner för underhåll under kortare perioder den närmsta tiden. Det är då inte möjligt att komma åt vår hemsida. Vi beklagar givetvis detta men tror ändå att det får mycket begränsade konsekvenser för våra kunder.', 'markdown', '2016-01-12 13:04:16', '2016-01-12 13:04:16', '2016-01-12 13:12:51', NULL, 'admin', 'Info'),
+(10, 'tavla-och-vinn-en-film', 'tavla-och-vinn-en-film', 'post', 'Tävla och vinn en film', 'Spana in vår [tävlingssida](dice100.php). Just nu har vi ett roligt tärningsspel där du kan tävla och vinna en gratisfilm. Eller varför inte utmana dig själv eller en vän.\r\n\r\nSpela så många gånger du vill, mycket nöje! ', 'markdown', '2016-01-12 13:14:28', '2016-01-12 13:14:28', '2016-01-12 13:24:37', NULL, 'admin', 'Användare'),
+(11, 'pulp-fiction', 'pulp-fiction', 'post', 'Pulp Fiction', '[Pulp Fiction](movie_view.php?id=1) denna filmhistoriska klassiker, är helt säker värd att ses igen. Återupplev den suggestiva atmosfären i detta mästerverk av Quentin Tarrantino.   ', 'markdown', '2016-01-12 13:27:40', '2016-01-12 13:27:40', '2016-01-12 13:32:55', NULL, 'admin', 'Film'),
+(12, 'ingen-golden-globe-for-alicia-vikander', 'ingen-golden-globe-for-alicia-vikander', 'post', 'Ingen Golden Globe för Alicia Vikander', 'Hon var nominerad i två klasser men vann inte någon. Nomoneringarna var ändå en fjäder i hatten för den svenska stjärnan.\r\n\r\nVi hoppas inom kort kunna erbjuda "The danish girl", där hon var nominerad som bästa kvinliga huvudroll, till våra kunder.\r\n', 'markdown', '2016-01-12 13:39:45', '2016-01-12 13:39:45', '2016-01-12 13:49:39', NULL, 'admin', 'Nyheter');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

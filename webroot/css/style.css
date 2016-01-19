@@ -1,9 +1,27 @@
 /**
+ * Main stylesheet
+ */
+@import url(links.css);
+@import url(form.css);
+
+
+/**
  * General elements
  */
+html {
+    overflow-y: scroll;
+}
 body {
   color: #333;
-  font-family: arial, sans-serif;
+  font: 100.01%/1.375 arial, sans-serif;
+}
+
+/**
+ * Typography
+ */
+h1 {
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
 }
 
 /**
@@ -11,7 +29,7 @@ body {
  */
 #wrapper {
   margin: 0 auto;
-  width: 980px; 
+  width: 960px; 
   padding: 10px;
 }
 
@@ -22,8 +40,12 @@ body {
 #header {
   position: relative;
   margin-bottom: 40px;
+  height: 80px;
 }
 
+.sitelogo {
+    height: 120%;
+}
 .sitetitle {
   position: absolute;
   top: 6px;
@@ -39,12 +61,62 @@ body {
   color: #666;
 }
 
+form.smallsearch {
+    width: 25%;
+}
+.smallsearch input {
+    width: 100%
+}
+
+
+/**
+ * Layout for navigation bar / menu
+ */
+#navbar {
+  margin-bottom: 2em;
+}
+#header form {
+    float: right;
+    margin-top: 6ex;
+    margin-right: 0;
+}
 
 /**
  * Layout for main
  */
 #main {
   min-height: 20em;
+  overflow: auto; 
+}
+
+aside {
+    float: right;
+    overflow: auto;
+    width: 28%;
+    padding-top: 1em;
+    margin-right: 1%;
+}
+
+section {
+    float:left;
+    overflow: auto;
+    width: 68%;
+    margin-left: 1%;
+}
+
+.usersearch input[type=text]{
+    width: 100%;
+}
+
+
+
+.me {
+    width: 100%;
+}
+.readable {
+  width: 70%;
+  padding-right: 1em;
+  border-right: 1px solid #ccc;
 }
 
 
@@ -59,4 +131,36 @@ body {
 
 .sitefooter {
   color: #666;
+}
+
+
+/**
+ * Byline
+ */
+.byline {
+  border-top: 1px dashed #ccc;
+  font-style: italic;
+  overflow: auto;
+}
+.byline figure {
+    width: 12%;
+    margin-bottom: 0;
+}
+.byline figure img {
+    max-width: 100%;
+}
+
+/**
+ * Figure
+ */
+figure {
+
+}
+
+figcaption {
+
+}
+
+figure.right {
+  float: right;
 }

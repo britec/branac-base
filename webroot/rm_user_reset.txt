@@ -1,0 +1,34 @@
+USE bjri15;
+SET NAMES 'utf8';
+
+--
+-- Databas: `bjri15`
+--
+DROP TABLE IF EXISTS `rm_user`;
+
+
+--
+-- Tabellstruktur `rm_user`
+--
+
+CREATE TABLE IF NOT EXISTS `rm_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `acronym` char(12) NOT NULL,
+  `name` varchar(80) DEFAULT NULL,
+  `password` char(32) DEFAULT NULL,
+  `salt` int(11) NOT NULL,
+  `role` varchar(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `protected` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `acronym` (`acronym`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+
+--
+-- Dumpning av Data i tabell `rm_user`
+--
+
+INSERT INTO `rm_user` (`id`, `acronym`, `name`, `password`, `salt`, `role`, `email`, `protected`) VALUES
+(1, 'admin', 'Administrator', '8678b907b1a86fe0591844ebe6b2eba7', 1448451164, 'admin', 'admin@rentalmovies.se', 1),
+(2, 'doe', 'John/Jane Doe', 'ce1e077000fd8a4bdad0575040583e27', 1452875607, 'admin', 'doe@rentalmovies.se', 0);
+
